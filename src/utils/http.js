@@ -14,9 +14,7 @@ httpInstance.interceptors.request.use(
 );
 // 响应拦截
 httpInstance.interceptors.response.use(
-  (res) => {
-    res.data;
-  },
+  (res) => res.data,
   (e) => {
     return Promise.reject(e);
   }
