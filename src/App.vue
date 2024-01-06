@@ -24,6 +24,7 @@ import HelloWorld from "./components/HelloWorld.vue";
   </header>
 
   <RouterView />
+  <el-button type="primary">Primary</el-button>
 </template>
 
 <style scoped>
