@@ -31,6 +31,12 @@ const router = createRouter({
       component: Login,
     },
   ],
+  //页面切换时滚动到顶部
+  scrollBehavior() {
+    return {
+      top: 0,
+    };
+  },
 });
 
 export default router;
