@@ -129,48 +129,48 @@ import { onMounted, ref } from "vue";
 import { useRoute } from "vue-router";
 import DetailHot from "@/views/Detail/components/DetailHot.vue";
 import { ElMessage } from "element-plus";
-// import { useCartStore } from "@/stores/cartStore";
+import { useCartStore } from "@/stores/cartStore";
 
 const goods = ref({});
 const route = useRoute();
+const count = ref(1);
+let skuObj = {};
+
 const getGoods = async () => {
   const res = await getDetail(route.params.id);
   goods.value = res.result;
 };
 onMounted(() => getGoods());
 
-let skuObj = {};
 const skuChange = (sku) => {
   console.log(sku);
   skuObj = sku;
 };
 
-// count
-const count = ref(1);
 const countChange = (count) => {
   console.log(count);
 };
 
 // 添加购物车
-// const cartStore = useCartStore();
-// const addCart = () => {
-//   if (skuObj.skuId) {
-//     // 规则已经选择 触发action
-//     cartStore.addCart({
-//       id: goods.value.id,
-//       name: goods.value.name,
-//       picture: goods.value.mainPictures[0],
-//       count: count.value,
-//       skuId: skuObj.skuId,
-//       attrsText: skuObj.specsText,
-//       selected: true,
-//       price: goods.value.price,
-//     });
-//   } else {
-//     // 规则没有选择 提示用书
-//     ElMessage.warning("请选择规则");
-//   }
-// };
+const cartStore = useCartStore();
+const addCart = () => {
+  console.log("添加购物车");
+  if (skuObj.skuId) {
+    cartStore.addCart({
+      id: goods.value.id,
+      name: goods.value.name,
+      picture: goods.value.mainPictures[0],
+      count: count.value,
+      skuId: skuObj.skuId,
+      attrsText: skuObj.specsText,
+      selected: true,
+      price: goods.value.price,
+    });
+  } else {
+    // 没有规格
+    ElMessage.warning("请选择规格");
+  }
+};
 </script>
 <style scoped lang="scss">
 .xtx-goods-page {

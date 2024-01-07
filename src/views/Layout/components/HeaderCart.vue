@@ -1,11 +1,11 @@
 <template>
   <div class="cart">
     <a class="curr" href="javascript:;">
-      <!-- <i class="iconfont icon-cart"></i><em>{{ cartStore.cartList.length }}</em> -->
+      <i class="iconfont icon-cart"></i><em>{{ cartStore.cartList.length }}</em>
     </a>
     <div class="layer">
       <div class="list">
-        <!-- <div class="item" v-for="i in cartStore.cartList" :key="i">
+        <div class="item" v-for="i in cartStore.cartList" :key="i">
           <RouterLink to="">
             <img :src="i.picture" alt="" />
             <div class="center">
@@ -23,10 +23,10 @@
             class="iconfont icon-close-new"
             @click="cartStore.delCart(i.skuId)"
           ></i>
-        </div> -->
+        </div>
       </div>
       <div class="foot">
-        <!-- <div class="total">
+        <div class="total">
           <p>共 {{ cartStore.allCount }} 件商品</p>
           <p>&yen; {{ cartStore.allPrice.toFixed(2) }}</p>
         </div>
@@ -35,15 +35,15 @@
           size="large"
           type="primary"
           >去购物车结算</el-button
-        > -->
+        >
       </div>
     </div>
   </div>
 </template>
 <script setup>
-// import { useCartStore } from "@/stores/cartStore";
+import { useCartStore } from "@/stores/cartStore";
 
-// const cartStore = useCartStore();
+const cartStore = useCartStore();
 </script>
 <style scoped lang="scss">
 .cart {
