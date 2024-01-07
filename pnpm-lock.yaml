@@ -17,6 +17,9 @@ dependencies:
   pinia:
     specifier: ^2.1.7
     version: registry.npmmirror.com/pinia@2.1.7(vue@3.3.11)
+  pinia-plugin-persistedstate:
+    specifier: ^3.2.1
+    version: registry.npmmirror.com/pinia-plugin-persistedstate@3.2.1(pinia@2.1.7)
   vue:
     specifier: ^3.3.11
     version: registry.npmmirror.com/vue@3.3.11
@@ -1982,6 +1985,17 @@ packages:
     version: 2.3.1
     engines: {node: '>=8.6'}
     dev: true
+
+  registry.npmmirror.com/pinia-plugin-persistedstate@3.2.1(pinia@2.1.7):
+    resolution: {integrity: sha512-MK++8LRUsGF7r45PjBFES82ISnPzyO6IZx3CH5vyPseFLZCk1g2kgx6l/nW8pEBKxxd4do0P6bJw+mUSZIEZUQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/pinia-plugin-persistedstate/-/pinia-plugin-persistedstate-3.2.1.tgz}
+    id: registry.npmmirror.com/pinia-plugin-persistedstate/3.2.1
+    name: pinia-plugin-persistedstate
+    version: 3.2.1
+    peerDependencies:
+      pinia: ^2.0.0
+    dependencies:
+      pinia: registry.npmmirror.com/pinia@2.1.7(vue@3.3.11)
+    dev: false
 
   registry.npmmirror.com/pinia@2.1.7(vue@3.3.11):
     resolution: {integrity: sha512-+C2AHFtcFqjPih0zpYuvof37SFxMQ7OEG2zV9jRI12i9BOy3YQVAHwdKtyyc8pDcDyIc33WCIsZaCFWU7WWxGQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/pinia/-/pinia-2.1.7.tgz}
