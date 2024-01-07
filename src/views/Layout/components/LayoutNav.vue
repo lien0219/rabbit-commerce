@@ -2,12 +2,12 @@
   <nav class="app-topnav">
     <div class="container">
       <ul>
-        <template v-if="false">
+        <template v-if="userStore.userInfo.token">
           <li>
-            <!-- <a href="javascript:;"
+            <a href="javascript:;"
               ><i class="iconfont icon-user"></i
               >{{ userStore.userInfo.account }}</a
-            > -->
+            >
           </li>
           <li>
             <el-popconfirm
@@ -42,17 +42,16 @@
   </nav>
 </template>
 <script setup>
-// import { useUserStore } from "@/stores/user";
+import { useUserStore } from "@/stores/user";
 import { useRouter } from "vue-router";
 
-// const userStore = useUserStore();
+const userStore = useUserStore();
 const router = useRouter();
 
 const confirm = () => {
-  console.log(1);
-  // 退出登录业务逻辑实现
-  //   userStore.clearUserInfo();
-  //   router.push("/login");
+  // 退出登录
+  userStore.clearUserInfo();
+  router.push("/login");
 };
 </script>
 <style scoped lang="scss">

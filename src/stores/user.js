@@ -2,7 +2,7 @@ import { loginAPI } from "@/api/user";
 import { defineStore } from "pinia";
 import { ref } from "vue";
 // import { useCartStore } from "./cartStore"
-// import { mergeCartAPI } from "@/apis/cart"
+// import { mergeCartAPI } from "@/api/cart"
 
 export const useUserStore = defineStore(
   "user",
@@ -28,17 +28,17 @@ export const useUserStore = defineStore(
       //   cartStore.updateNewCartList()
     };
 
-    // 退出清除用户信息
-    // const clearUserInfo = () => {
-    //   userInfo.value = {}
-    //   // 执行清除购物车的action
-    //   cartStore.clearCart()
-    // }
+    //清除用户信息;
+    const clearUserInfo = () => {
+      userInfo.value = {};
+      // 执行清除购物车的action
+      // cartStore.clearCart()
+    };
 
     return {
       userInfo,
       getUserInfo,
-      //   clearUserInfo,
+      clearUserInfo,
     };
   },
   {
